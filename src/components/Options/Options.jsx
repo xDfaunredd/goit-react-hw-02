@@ -1,6 +1,6 @@
 import s from "./Options.module.css";
 
-function Options({ updateFeedback, resetFeedback }) {
+function Options({ updateFeedback, resetFeedback, totalRate }) {
   return (
     <>
       <ul className={s.optionsList}>
@@ -19,11 +19,18 @@ function Options({ updateFeedback, resetFeedback }) {
             Bad
           </button>
         </li>
-        <li>
-          <button type="button" onClick={resetFeedback}>
-            Reset
-          </button>
-        </li>
+
+        {totalRate > 0 && (
+          <li>
+            <button
+              type="button"
+              onClick={resetFeedback}
+              className={s.resetButton}
+            >
+              Reset
+            </button>
+          </li>
+        )}
       </ul>
     </>
   );
