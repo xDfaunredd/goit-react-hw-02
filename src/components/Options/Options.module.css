@@ -1,0 +1,11 @@
+.optionsList {
+  display: flex;
+  gap: 20px;
+
+  li:last-child > button {
+    color: red;
+    &:hover {
+      border: 1px solid red;
+    }
+  }
+}
